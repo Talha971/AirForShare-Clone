@@ -1,0 +1,75 @@
+// var
+$white: white;
+$light-color: #4a4a4a;
+$body-background: #f4f4f4;
+$primary-color: #638eff;
+$primary-dark-color: #745dff;
+body {
+  background-color: $body-background;
+  font-family: "open Sans", sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 50px auto;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: $white;
+  img {
+    width: 100px;
+    cursor: crosshair;
+    &:active {
+      opacity: 0.2;
+    }
+  }
+}
+
+.menu-bar {
+  ul {
+    display: flex;
+    gap: 40px;
+    li {
+      list-style-type: none;
+      color: $light-color;
+      font-size: 14px;
+    }
+    .menu-btn {
+      color: $primary-color;
+      font-weight: 700;
+    }
+  }
+}
+
+.main-card {
+  display: flex;
+  background-color: $white;
+  width: 100%;
+  min-height: 350px;
+  margin-top: 30px;
+  box-shadow: 0 21px 33px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid $white;
+
+  .card-sidebar {
+    padding: 10px;
+    background-color: $body-background;
+    div {
+      margin-bottom: 20px;
+      cursor: pointer;
+      svg {
+        color: $light-color;
+      }
+    }
+    .active {
+      svg {
+        color: $primary-dark-color;
+      }
+    }
+  }
+}
