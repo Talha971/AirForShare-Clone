@@ -52,24 +52,38 @@ body {
   background-color: $white;
   width: 100%;
   min-height: 350px;
+  max-height: auto;
   margin-top: 30px;
   box-shadow: 0 21px 33px 0 rgba(0, 0, 0, 0.1);
-  border: 1px solid $white;
 
   .card-sidebar {
     padding: 10px;
     background-color: $body-background;
     div {
+      padding: 15px;
       margin-bottom: 20px;
       cursor: pointer;
-      svg {
-        color: $light-color;
+      img {
+        width: 25px;
       }
     }
-    .active {
-      svg {
-        color: $primary-dark-color;
-      }
+  }
+}
+
+.card-container {
+  border: 1px solid $white;
+  padding: 0 50px;
+  width: 100%;
+  div {
+    h1 {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 0.85;
+      letter-spacing: 0.6px;
+      color: #000;
+      margin-bottom: 28px;
     }
+  }
+  .text-section {
   }
 }

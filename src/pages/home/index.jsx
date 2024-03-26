@@ -6,7 +6,13 @@ import TEXT_GREY from "../../assets/text-gray.svg"
 import TEXT_PRIMARY from "../../assets/text-primary.svg"
 import FILES_GREY from "../../assets/files-gray.svg"
 import FILES_PRIMARY from "../../assets/files-primary.svg"
+import { useState } from "react";
+import ThemeButton from "../../components/Button.jsx";
+import TextArea from "../../components/TextArea";
+
 function HomePage() {
+    const [type, setType] = useState("text")
+
     return (
         <div className="container">
             <div className="header-bar">
@@ -25,14 +31,32 @@ function HomePage() {
             </div>
             <div className="main-card">
                 <div className="card-sidebar">
-                    <div className="active">
-                        <MdTextFields size={40} />
+                    <div onClick={() => setType("text")} >
+                        <img src={type === "text" ? TEXT_PRIMARY : TEXT_GREY} alt="" />
                     </div>
-                    <div>
-                        <FaRegFileAlt size={35} />
+                    <div onClick={() => setType("files")} >
+                        <img src={type === "files" ? FILES_PRIMARY : FILES_GREY} alt="" />
+
                     </div>
                 </div>
-                <div className="card-conatiner"></div>
+                <div className="card-container">
+                    {
+                        type === "text" ?
+                            <div className="text-section">
+                                <h1>Text</h1>
+                                <div className="resize-section">
+                                    <TextArea className="text-area" />
+                                </div>
+                                <div>
+                                    <ThemeButton disabled={true} title={'save'}></ThemeButton>
+                                </div>
+                            </div>
+                            :
+                            <div className="files-section">
+                                <h1>Files</h1>
+                            </div>
+                    }
+                </div>
             </div>
         </div>
     )
