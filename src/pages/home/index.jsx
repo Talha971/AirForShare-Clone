@@ -12,7 +12,7 @@ import TextArea from "../../components/TextArea";
 
 function HomePage() {
     const [type, setType] = useState("text")
-
+    const [textValue, setTextValue] = useState('')
     return (
         <div className="container">
             <div className="header-bar">
@@ -45,10 +45,13 @@ function HomePage() {
                             <div className="text-section">
                                 <h1>Text</h1>
                                 <div className="resize-section">
-                                    <TextArea className="text-area" />
+                                    <TextArea value={textValue} onChange=
+                                        {(e) => setTextValue(e.target.value)} />
                                 </div>
                                 <div>
-                                    <ThemeButton disabled={true} title={'save'}></ThemeButton>
+                                    <ThemeButton disabled=
+                                        {textValue ? false : true}
+                                        title={'save'}></ThemeButton>
                                 </div>
                             </div>
                             :

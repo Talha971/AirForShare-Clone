@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import "./index.scss"
-function TextArea() {
+function TextArea({ onChange }) {
     // ref hook poora element utha ke le aata hai
     const textareaRef = useRef()
     const resizeTextarea = (event) => {
@@ -9,7 +9,7 @@ function TextArea() {
         textareaRef.current.style.height = textareaRef.current.scrollHeight + 12 + 'px'
     }
     return (
-        <textarea ref={textareaRef} onInput={resizeTextarea}
+        <textarea ref={textareaRef} onChange={onChange} onInput={resizeTextarea}
             placeholder="Type something..." className="text-area"></textarea>
     )
 }
