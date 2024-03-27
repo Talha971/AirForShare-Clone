@@ -9,10 +9,14 @@ import FILES_PRIMARY from "../../assets/files-primary.svg"
 import { useState } from "react";
 import ThemeButton from "../../components/Button.jsx";
 import TextArea from "../../components/TextArea";
+import DropZone from "../../components/DropZone.jsx";
+import FilesList from "../../components/FilesList.jsx";
 
 function HomePage() {
     const [type, setType] = useState("text")
     const [textValue, setTextValue] = useState('')
+
+
     return (
         <div className="container">
             <div className="header-bar">
@@ -48,15 +52,18 @@ function HomePage() {
                                     <TextArea value={textValue} onChange=
                                         {(e) => setTextValue(e.target.value)} />
                                 </div>
-                                <div>
+                                <div className="save-btn-section">
+                                    <span>Clear</span>
                                     <ThemeButton disabled=
                                         {textValue ? false : true}
-                                        title={'save'}></ThemeButton>
+                                        title={'Save'}></ThemeButton>
                                 </div>
                             </div>
                             :
                             <div className="files-section">
                                 <h1>Files</h1>
+                                {/* <DropZone /> */}
+                                <FilesList />
                             </div>
                     }
                 </div>
@@ -65,4 +72,5 @@ function HomePage() {
     )
 
 }
+
 export default HomePage

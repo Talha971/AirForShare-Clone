@@ -5,4 +5,5 @@ function ThemeButton({ disabled, title, onClick }) {
             onClick={onClick}>{title}</button>
     )
 }
+
 export default ThemeButton

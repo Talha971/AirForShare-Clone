@@ -13,4 +13,5 @@ function TextArea({ onChange }) {
             placeholder="Type something..." className="text-area"></textarea>
     )
 }
+
 export default TextArea
