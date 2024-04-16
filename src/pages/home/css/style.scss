@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  width: 70%;
+  width: 60%;
   margin: 50px auto;
 }
 
@@ -50,7 +50,7 @@ body {
   display: flex;
   background-color: $white;
   width: 100%;
-  min-height: 350px;
+  min-height: 400px;
   max-height: auto;
   margin-top: 30px;
   box-shadow: 0 21px 33px 0 rgba(0, 0, 0, 0.1);
@@ -83,6 +83,7 @@ body {
       margin-bottom: 28px;
     }
   }
+
   .text-section {
     height: 100%;
     display: flex;
@@ -102,9 +103,63 @@ body {
       padding: 20px 0;
       text-align: end;
     }
+    .text-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .links {
+        flex: 1;
+        width: 10%;
+      }
+      div {
+        margin-bottom: 5px;
+        span {
+          a {
+            color: $primary-color;
+          }
+        }
+      }
+    }
   }
 }
 
 .files-section {
   height: 100%;
+  .files-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .files-btn {
+    display: flex;
+    gap: 30px;
+    div {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      cursor: pointer;
+      &:active {
+        opacity: 0.5;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .download-btn {
+      color: $primary-dark-color;
+      svg {
+        font-size: 20px;
+        margin-right: 6px;
+        margin-bottom: 2px;
+      }
+    }
+    .delete-btn {
+      color: #963a45;
+      svg {
+        font-size: 22px;
+        margin-right: 6px;
+        margin-bottom: 2px;
+      }
+    }
+  }
 }
